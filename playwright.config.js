@@ -13,13 +13,12 @@ const config = {
         permissions: ['geolocation'],
         geolocation: { latitude: 28, longitude: 77 },
         contextOptions: { permissions: ['geolocation'] },
-        launchOptions: { slowMo: 50 } // 50 milliseconds slow motion
+        launchOptions: { slowMo: 100 } // 150 milliseconds slow motion
     },
     expect: { timeout: 5000 } // For Assertion
 };
 
 export default config;
-
 
 
 

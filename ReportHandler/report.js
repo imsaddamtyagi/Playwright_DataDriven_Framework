@@ -80,7 +80,7 @@ function generateCombinedReport(testResults, executionTime) {
   <style>
 /* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
@@ -88,31 +88,30 @@ body {
 
 /* Header Styling */
 h1, h2, h3 {
-    color: #222;
+    color: #333;
     margin: 0;
     padding: 5px;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     letter-spacing: 1px;
-    font-family: 'Arial', sans-serif; /* Custom font */
 }
 
 /* Header Section (Logo + Summary Table) */
 .header-container {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Ensure center alignment */
+    align-items: center;
     gap: 20px;
     padding: 20px;
     background: white;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
     border-radius: 12px;
     margin-bottom: 20px;
-    transition: all 0.3s ease;
     max-width: 1000px;
     margin: auto;
     flex-wrap: wrap;
+    transition: all 0.3s ease;
 }
 
 /* Logo */
@@ -121,16 +120,14 @@ h1, h2, h3 {
     max-height: 80px;
     height: auto;
     width: auto;
-    filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.1));
-    flex-shrink: 0;
-    align-self: flex-start;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.1));
 }
 
 /* Report Title */
 .report-title {
     text-align: center;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     width: 100%;
     margin-bottom: 10px;
 }
@@ -139,7 +136,7 @@ h1, h2, h3 {
 .summary-table {
     border-collapse: collapse;
     background: #fff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
@@ -174,14 +171,14 @@ h1, h2, h3 {
 
 /* Report Container */
 .report-container {
-    max-width: 1000px; /* Match header container max-width */
+    max-width: 1000px;
     margin: 0 auto;
     background: white;
     padding: 15px;
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-    transition: all 0.3s ease;
     overflow-x: auto;
+    transition: all 0.3s ease;
 }
 
 /* Main Table Styling */
@@ -192,8 +189,8 @@ table {
 }
 
 th, td {
-    padding: 8px;
-    font-size: 12px;
+    padding: 10px;
+    font-size: 14px;
     border-bottom: 1px solid #ddd;
 }
 
@@ -201,11 +198,10 @@ th {
     background: linear-gradient(135deg, #4CAF50, #3a9d42);
     color: white;
     text-align: left;
-    font-family: 'Arial', sans-serif; /* Custom font */
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border-bottom: 3px solid #3a9d42; /* Add border for styling */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    border-bottom: 3px solid #3a9d42;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 tr:nth-child(even) {
@@ -217,7 +213,6 @@ tr:hover {
     transition: background-color 0.3s ease;
 }
 
-
 /* Status Labels */
 .status-pass, .status-fail, .status-skipped {
     padding: 7px 12px;
@@ -225,9 +220,8 @@ tr:hover {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 12px;
-    letter-spacing: 0.5px;
     display: inline-block;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .status-pass {
@@ -265,7 +259,6 @@ tr:hover {
     justify-content: center;
     align-items: center;
     margin-top: 2%;
-    animation: fadeIn 1s ease-in-out;
     flex-wrap: wrap;
 }
 
@@ -273,7 +266,7 @@ tr:hover {
     max-width: 320px;
     max-height: 320px;
     border-radius: 10px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Styling */
@@ -326,8 +319,8 @@ tr:hover {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+</style>
 
-    </style>
     </head>
     <body>
       <!-- Header Container -->

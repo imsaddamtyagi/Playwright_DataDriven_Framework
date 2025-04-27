@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'; // Import Playwright
+import { test, expect  } from '@playwright/test'; // Import Playwright
 import { readExcelData } from '../DataHandler/excelHelper';
 import { finalizeReport } from '../ReportHandler/report.js';
 import PlaywrightActions from '../ActionHandler/PlaywrightActions';
@@ -42,16 +42,16 @@ test('runTest', async ({ page }) => {
                 // console.log('Normalized values:', name, operation, xpathlocator, testdata);
 
                 switch (operation) {
-                    case 'doclick':             await actions.doClick(xpathlocator, testdata);             break;
-                    case 'dofill':              await actions.doFill(xpathlocator, testdata);              break;
-                    case 'dofillindex':         await actions.doFillIndex(xpathlocator, testdata);         break;
-                    case 'dowaitforelement':    await actions.doWaitForElement(xpathlocator);              break;
-                    case 'dofileupload':        await actions.doFileUpload(xpathlocator,testdata);         break;
-                    case 'doscroll':            await actions.doScroll(xpathlocator,testdata);             break;
-                    case 'dowait':              await actions.doWait(xpathlocator,testdata);               break;
-                    case 'doreport':            await actions.doReport(xpathlocator, testdata,name);       break;
-                    case 'doswitchtab':         await actions.doSwitchTab(xpathlocator);  actions.page=newTab; actions = new PlaywrightActions(newTab,except);                   break;
-                    case 'doselect':            await actions.doSelect(xpathlocator,testdata);                      break;
+                    case 'doclick':             await actions.doClick(xpathlocator, testdata);                    break;
+                    case 'dofill':              await actions.doFill(xpathlocator, testdata);                     break;
+                    case 'dofillindex':         await actions.doFillIndex(xpathlocator, testdata);                break;
+                    case 'dowaitforelement':    await actions.doWaitForElement(xpathlocator);                     break;
+                    case 'dofileupload':        await actions.doFileUpload(xpathlocator,testdata);                break;
+                    case 'doscroll':            await actions.doScroll(xpathlocator,testdata);                    break;
+                    case 'dowait':              await actions.doWait(xpathlocator,testdata);                      break;
+                    case 'doreport':            await actions.doReport(xpathlocator, testdata,name);              break;
+                    case 'doswitchtab':         await actions.doSwitchTab(xpathlocator);                          actions.page=newTab; actions = new PlaywrightActions(newTab,except);                   break;
+                    case 'doselect':            await actions.doSelect(xpathlocator,testdata);                    break;
                 
                    default: console.log(`Invalid operation: ${operation}`);
 

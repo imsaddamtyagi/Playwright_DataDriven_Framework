@@ -1,4 +1,3 @@
-
 const config = {
     testDir: './tests',
     timeout: 300 * 1000,  // 100 * Seconds
@@ -18,6 +17,21 @@ const config = {
     },
     expect: { timeout: 5000 } // For Assertion
 };
+
+export default config;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 const config = {
@@ -73,4 +87,3 @@ const config = {
 };
   
 */
-export default config;

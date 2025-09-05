@@ -1,22 +1,14 @@
-import { test, expect  } from '@playwright/test'; // Import Playwright
-import { readExcelData } from '../DataHandler/excelHelper';
+import { test, expect   } from '@playwright/test'; // Import Playwright
+import { readExcelData  } from '../DataHandler/excelHelper';
 import { finalizeReport } from '../ReportHandler/report.js';
 import PlaywrightActions from '../ActionHandler/PlaywrightActions';
 const TestDataPath = './TestData/PlaywrightData.xlsx';
 const URL = 'https://demo.automationtesting.in/Register.html';
 
-function getExecutionTime(startTime, endTime) {
-    const duration = endTime - startTime;
-    const minutes = Math.floor((duration / (1000 * 60)) % 60);
-    const seconds = Math.floor((duration / 1000) % 60);
-    return `${minutes}m ${seconds}s`;
-}
-
 test('runTest', async ({ page }) => {
     const startTime = new Date().getTime();
     let endTime;
     let actions = new PlaywrightActions(page, expect);
-
     try {
         const masterSheetName = "MasterSheet";
         const masterSheetData = await readExcelData(TestDataPath, masterSheetName);
@@ -38,6 +30,7 @@ test('runTest', async ({ page }) => {
                    {const trimmedKey = key.trim().toLowerCase().replace(/\s+/g, '');
                     normalizedData[trimmedKey] = actionData[key];}
                 }
+                
                 const { name, operation, xpathlocator, testdata } = normalizedData;
                 // console.log('Normalized values:', name, operation, xpathlocator, testdata);
 
@@ -67,3 +60,12 @@ test('runTest', async ({ page }) => {
         await page.pause();
     }
 });
+
+
+function getExecutionTime(startTime, endTime) 
+{
+    const duration = endTime - startTime;
+    const minutes = Math.floor((duration / (1000 * 60)) % 60);
+    const seconds = Math.floor((duration / 1000) % 60);
+    return `${minutes}m ${seconds}s`;
+}

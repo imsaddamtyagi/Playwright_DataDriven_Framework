@@ -39,7 +39,6 @@ class PlaywrightActions
     async doClick(XPathLocator) {
         try {
             const element = await this.page.locator(XPathLocator);
-          //  await element.evaluate(el => {el.style.backgroundColor = 'yellow';el.style.border = '2px solid red';setTimeout(() => {el.style.border = '';}, 150);});
             await element.click();
             console.log(`Clicked on element: ${XPathLocator}`);
         } catch (error) {
@@ -50,7 +49,6 @@ class PlaywrightActions
     async doFill(XPathLocator, testData) {
         try {
             const element = await this.page.locator(XPathLocator);
-          //  await element.evaluate(el => {el.style.backgroundColor = 'yellow';el.style.border = '2px solid red';setTimeout(() => {el.style.border = '';}, 150);});
             await element.fill(testData);
             console.log(`Filled data: ${testData}`);
         } catch (error) {
@@ -61,7 +59,6 @@ class PlaywrightActions
     async doFillIndex(XPathLocator, testData) {
             try {
                 const element = await this.page.locator(XPathLocator).nth(0);
-               // await element.evaluate(el => {el.style.backgroundColor = 'yellow';el.style.border = '2px solid red';setTimeout(() => {el.style.border = '';}, 150);});
                 await element.fill(testData);
                 console.log(`Entered -> ${testData} in -> ${XPathLocator}`);
             } catch(error) {
@@ -72,7 +69,6 @@ class PlaywrightActions
         async doSelect(XPathLocator, testData) {
             try {
                 const element = await this.page.locator(XPathLocator);
-              //  await element.evaluate(el => {el.style.backgroundColor = 'yellow';el.style.border = '2px solid red';setTimeout(() => {el.style.border = '';}, 150);});
               await element.selectOption(testData);
             console.log(`Selected data: ${testData}`);
             } catch (error) {
@@ -104,7 +100,6 @@ class PlaywrightActions
     try{
         console.log("--------->Waiting started until the element appears on screen---------->");
         const element = await this.page.locator(XPathLocator);
-       // await element.evaluate(el => {el.style.backgroundColor = 'yellow';el.style.border = '2px solid red';setTimeout(() => {el.style.border = '';}, 150);});
         await element.waitFor({state:'visible'});
         await element.waitFor({state:'attached'});
         console.log("--------->Element is now visible on the screen---------->");
@@ -134,7 +129,6 @@ async doScroll(XPathLocator) {
     try {
         console.log("Scrolling to element");
         const element = await this.page.locator(XPathLocator).scrollIntoViewIfNeeded();
-       // await element.evaluate(el => {el.style.backgroundColor = 'yellow';el.style.border = '2px solid red';setTimeout(() => {el.style.border = '';}, 150);});
         console.log(`scrolled to element: ${XPathLocator}`);
     } catch(error) {
         console.error('Error occured:', error);

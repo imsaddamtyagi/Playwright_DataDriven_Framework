@@ -1,9 +1,11 @@
-const config = {
+const config = 
+{
     testDir: './tests',
-    timeout: 300 * 1000,  // 100 * Seconds
+    timeout: 5 * 60 * 1000,  // 1000 MilliSeconds = 1 Seconds
     //reporter: 'html',
 
-    use: {
+    use:
+    {
         browserName: 'chromium',
         headless: false,
         screenshot: 'on',
@@ -19,9 +21,6 @@ const config = {
 };
 
 export default config;
-
-
-
 
 
 
